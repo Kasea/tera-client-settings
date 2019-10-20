@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "long": "^4.0.0",
     "protobufjs": "^6.8.8",
     "zlib": "^1.0.5"
   }
