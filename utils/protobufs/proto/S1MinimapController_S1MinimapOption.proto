@@ -1,0 +1,6 @@
+package ProtodecMessages;
+
+message S1MinimapController_S1MinimapOption {
+	required int64 fld1 = 1;
+	required string fld2 = 2;
+}

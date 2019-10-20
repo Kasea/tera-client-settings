@@ -1,0 +1,15 @@
+package ProtodecMessages;
+
+message Setting {
+    required int32 fld1 = 1;
+    required string name = 10;
+    required bytes data = 20;
+    required bool compressed = 30;
+    required uint32 length = 40;
+}
+
+message Settings {
+    required int32 fld1 = 1;
+    required string fld2 = 2;
+    repeated Setting data = 10;
+}

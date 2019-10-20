@@ -1,0 +1,16 @@
+package ProtodecMessages;
+
+message S1SkillCrestPresetController_1 {
+	required int64 fld4 = 4;
+}
+
+message S1SkillCrestPresetController_2 {
+	repeated S1SkillCrestPresetController_1 fld2 = 2;
+	required int64 fld3 = 3;
+}
+
+message S1SkillCrestPresetController {
+	required int64 fld1 = 1;
+	repeated S1SkillCrestPresetController_2 fld2 = 2;
+	required int64 fld4 = 4;
+}

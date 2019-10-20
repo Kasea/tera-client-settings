@@ -1,0 +1,6 @@
+package ProtodecMessages;
+
+message S1NPCGuildController {
+	required int64 fld1 = 1;
+	required int64 fld10 = 10;
+}

@@ -1,0 +1,30 @@
+package ProtodecMessages;
+
+message S1SystemOption_S1AbnormalityOption_1 {
+	required int64 fld1 = 1;
+	required int64 fld2 = 2;
+	required int64 fld3 = 3;
+}
+
+message S1SystemOption_S1AbnormalityOption_2 {
+	required int64 fld1 = 1;
+	required int64 fld2 = 2;
+	required int64 fld3 = 3;
+	required int64 fld4 = 4;
+	required int64 fld5 = 5;
+	required int64 fld6 = 6;
+}
+
+message S1SystemOption_S1AbnormalityOption_3 {
+	required int64 fld1 = 1;
+	required int64 fld2 = 2;
+	required int64 fld3 = 3;
+	required int64 fld4 = 4;
+}
+
+message S1SystemOption_S1AbnormalityOption {
+	required int64 fld1 = 1;
+	required S1SystemOption_S1AbnormalityOption_1 fld2 = 2;
+	required S1SystemOption_S1AbnormalityOption_2 fld3 = 3;
+	required S1SystemOption_S1AbnormalityOption_3 fld4 = 4;
+}

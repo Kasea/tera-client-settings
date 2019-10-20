@@ -1,0 +1,28 @@
+package ProtodecMessages;
+
+enum S1ShortCutController_types {
+  SKILL = 0;
+  ITEM = 100;
+  PET_SKILL = 200;
+  EMOTE = 300;
+}
+
+message S1ShortCutController_1 {
+	required int64 windowType = 1;
+	required int64 location = 2;
+	required S1ShortCutController_types type = 3;
+	required int64 id = 4;
+}
+
+message S1ShortCutController_2 {
+	required int64 fld1 = 1;
+}
+
+message S1ShortCutController {
+	required int64 fld1 = 1;
+	required int64 fld10 = 10;
+	required int64 fld20 = 20;
+	repeated S1ShortCutController_1 keys = 40;
+	required int64 fld50 = 50;
+	repeated S1ShortCutController_2 keysData = 70;
+}

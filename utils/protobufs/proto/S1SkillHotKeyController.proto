@@ -1,0 +1,15 @@
+package ProtodecMessages;
+
+message S1SkillHotKeyController_1 {
+	required int64 fld1 = 1;
+	required int64 fld2 = 2;
+	required int64 fld3 = 3;
+	required int64 fld4 = 4;
+}
+
+message S1SkillHotKeyController {
+	required int64 fld1 = 1;
+	required string fld9 = 9;
+	repeated S1SkillHotKeyController_1 fld10 = 10;
+	required int64 fld11 = 11;
+}

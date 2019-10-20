@@ -1,0 +1,36 @@
+package ProtodecMessages;
+
+message S1ChatController_1 {
+	required string name = 7;
+}
+
+message S1ChatController_2 {
+	required int64 order = 10;
+	required int64 group = 20;
+	required int64 x = 30;
+	required int64 y = 40;
+	required int64 width = 50;
+	required int64 height = 60;
+	required string name = 70;
+	required float fontSize = 81;
+	required int64 opacity = 90;
+	required int64 autoChangeParty = 95;
+	required int64 autoChangeChannel = 96;
+	required string autoChangeChannelName = 97;
+	repeated S1ChatController_1 channels = 100;
+}
+
+message S1ChatController_3 {
+	required string name = 1;
+	required int64 r = 2;
+	required int64 g = 3;
+	required int64 b = 4;
+}
+
+message S1ChatController {
+	required int64 fld1 = 1;
+	repeated S1ChatController_2 tabs = 2;
+	repeated S1ChatController_3 channels = 4;
+	required int64 fld5 = 5;
+	required int64 fld6 = 6;
+}

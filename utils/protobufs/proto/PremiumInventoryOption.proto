@@ -1,0 +1,6 @@
+package ProtodecMessages;
+
+message PremiumInventoryOption {
+	required int64 fld1 = 1;
+	required int64 fld2 = 2;
+}

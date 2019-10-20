@@ -1,0 +1,29 @@
+package ProtodecMessages;
+
+enum S1CustomizeKeyGroup_Modifiers {
+  CTRL_ALT_SHIFT = 7;
+
+  CTRL_SHIFT = 6;
+  SHIFT_ALT = 5;
+
+  SHIFT = 4;
+
+  ALT_CTRL = 3;
+  
+  CTRL = 2;
+  ALT = 1;
+}
+
+
+message S1CustomizeKeyGroup_1 {
+	required int64 id = 2;
+	required S1CustomizeKeyGroup_Modifiers primaryMod = 3;
+	required int64 primaryKey = 4;
+	required S1CustomizeKeyGroup_Modifiers secondaryMod = 5;
+	required int64 secondaryKey = 6;
+}
+
+message S1CustomizeKeyGroup {
+	required int64 fld1 = 1;
+	repeated S1CustomizeKeyGroup_1 keys = 2;
+}

@@ -1,0 +1,5 @@
+package ProtodecMessages;
+
+message S1QuestSummaryView {
+	required int64 fld1 = 1;
+}
