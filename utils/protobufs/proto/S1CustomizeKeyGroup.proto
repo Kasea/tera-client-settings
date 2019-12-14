@@ -1,4 +1,4 @@
-package ProtodecMessages;
+package TeraSettings;
 
 enum S1CustomizeKeyGroup_Modifiers {
   CTRL_ALT_SHIFT = 7;
@@ -16,14 +16,14 @@ enum S1CustomizeKeyGroup_Modifiers {
 
 
 message S1CustomizeKeyGroup_1 {
-	required int64 id = 2;
-	required S1CustomizeKeyGroup_Modifiers primaryMod = 3;
-	required int64 primaryKey = 4;
-	required S1CustomizeKeyGroup_Modifiers secondaryMod = 5;
-	required int64 secondaryKey = 6;
+	optional int64 id = 2;
+	optional S1CustomizeKeyGroup_Modifiers primaryMod = 3;
+	optional int64 primaryKey = 4;
+	optional S1CustomizeKeyGroup_Modifiers secondaryMod = 5;
+	optional int64 secondaryKey = 6;
 }
 
 message S1CustomizeKeyGroup {
-	required int64 fld1 = 1;
+	optional int64 fld1 = 1;
 	repeated S1CustomizeKeyGroup_1 keys = 2;
 }

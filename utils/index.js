@@ -7,6 +7,10 @@ async function write_file(file_path, data, json=true) {
     else await fsAsync.writeFile(file_path, data);
 }
 
+async function read_file(file_path) {
+    return (await fsAsync.readFile(file_path)).toString("utf-8");
+}
+
 /**
  * Returns a list of all the files in the directory and its sub directories
  * @param {*} dir 
@@ -30,5 +34,6 @@ async function get_all_files(dir, files_){
 
 module.exports = {
     write_file,
-    get_all_files
+    get_all_files,
+    read_file
 };

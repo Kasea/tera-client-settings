@@ -1,17 +1,17 @@
-package ProtodecMessages;
+package TeraSettings;
 
 message S1EquipmentPresetController_1 {
-	required int64 fld2 = 2;
-	required int64 fld3 = 3;
-	required int64 fld4 = 4;
-	required int64 fld5 = 5;
-	required int64 fld6 = 6;
+	optional int64 fld2 = 2;
+	optional int64 fld3 = 3;
+	optional int64 fld4 = 4;
+	optional int64 fld5 = 5;
+	optional int64 fld6 = 6;
 }
 
 message S1EquipmentPresetController {
-	required int64 fld1 = 1;
+	optional int64 fld1 = 1;
 	repeated S1EquipmentPresetController_1 fld2 = 2;
 	repeated int64 fld3 = 3;
-	required int64 fld4 = 4;
-	required int64 fld5 = 5;
+	optional int64 fld4 = 4;
+	optional int64 fld5 = 5;
 }

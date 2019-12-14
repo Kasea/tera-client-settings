@@ -1,6 +1,6 @@
-package ProtodecMessages;
+package TeraSettings;
 
 message S1GameOption_S1InterfaceGroup {
-	required int64 fld1 = 1;
-	required float fld3 = 3;
+	optional int64 fld1 = 1;
+	optional float fld3 = 3;
 }

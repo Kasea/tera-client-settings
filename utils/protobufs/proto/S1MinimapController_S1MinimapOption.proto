@@ -1,6 +1,6 @@
-package ProtodecMessages;
+package TeraSettings;
 
 message S1MinimapController_S1MinimapOption {
-	required int64 fld1 = 1;
-	required string fld2 = 2;
+	optional int64 fld1 = 1;
+	optional string fld2 = 2;
 }

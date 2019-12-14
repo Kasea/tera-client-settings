@@ -1,6 +1,6 @@
-package ProtodecMessages;
+package TeraSettings;
 
 message S1CustomizePadButtonGroup {
-	required int64 fld1 = 1;
-	required string fld3 = 3;
+	optional int64 fld1 = 1;
+	optional string fld3 = 3;
 }

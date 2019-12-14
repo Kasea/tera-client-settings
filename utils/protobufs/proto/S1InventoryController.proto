@@ -1,15 +1,15 @@
-package ProtodecMessages;
+package TeraSettings;
 
 message S1InventoryController_1 {
-	required int64 fld1 = 1;
-	required int64 fld2 = 2;
+	optional int64 fld1 = 1;
+	optional int64 fld2 = 2;
 	repeated int64 fld3 = 3;
-	required string fld4 = 4;
+	optional string fld4 = 4;
 }
 
 message S1InventoryController {
-	required int64 fld1 = 1;
-	required int64 fld2 = 2;
-	required S1InventoryController_1 fld3 = 3;
-	required int64 fld4 = 4;
+	optional int64 fld1 = 1;
+	optional int64 fld2 = 2;
+	optional S1InventoryController_1 fld3 = 3;
+	optional int64 fld4 = 4;
 }

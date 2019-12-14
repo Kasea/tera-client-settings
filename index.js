@@ -1,4 +1,7 @@
 const EventEmitter = require('events');
+try {
+    delete require.cache[require.resolve("./utils/protobufs/index")];
+}catch(e) {}
 const { parseSettings, packSettings } = require("./utils/protobufs/index");
 
 
@@ -22,8 +25,8 @@ module.exports = class ClientSettings extends EventEmitter {
 
     hookPackets(mod) {
         const handlePacket = name => {
-            mod.hook(name, 1, e=> {
-                const settings = parseSettings(e.data);
+            mod.hook(name, 1, async e=> {
+                const settings = await parseSettings(e.data);
                 this._packets[name] = settings;
 
                 this.emit("update", name, this._packets);

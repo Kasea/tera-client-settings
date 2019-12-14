@@ -2,5 +2,8 @@
     "servers": ["https://raw.githubusercontent.com/Kaseaa/tera-client-settings/master/"],
     "supportUrl": "https://github.com/Kaseaa/tera-client-settings/issues",
     "name": "client-settings",
-    "disableAutoUpdate": false
+    "disableAutoUpdate": false,
+    "options": {
+        "reloadable": true
+    }
 }

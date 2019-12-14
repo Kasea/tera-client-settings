@@ -1,20 +1,24 @@
-package ProtodecMessages;
+package TeraSettings;
 
 message S1UI_GFxManager_1 {
-	required string name = 1;
-	required int64 fld2 = 2;
-	required float x = 3;
-	required float y = 4;
+	optional string name = 1;
+	optional int64 fld2 = 2;
+	optional float x = 3;
+	optional float y = 4;
 }
 
 message S1UI_GFxManager_3 {
-	required string name = 1;
-	required string value = 2;
+	optional string name = 1;
+	optional string value = 2;
 }
 
 message S1UI_GFxManager {
 	repeated S1UI_GFxManager_1 windows = 1;
 	repeated S1UI_GFxManager_3 fld2 = 2;
-	required int64 fld3 = 3;
-	required int64 fld4 = 4;
+	optional int64 fld3 = 3;
+	optional int64 fld4 = 4;
+}
+
+message S1UI_GFxManager_2 {
+	repeated float fld10 = 10;
 }

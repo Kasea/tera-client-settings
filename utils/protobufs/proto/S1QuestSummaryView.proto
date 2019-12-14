@@ -1,5 +1,5 @@
-package ProtodecMessages;
+package TeraSettings;
 
 message S1QuestSummaryView {
-	required int64 fld1 = 1;
+	optional int64 fld1 = 1;
 }

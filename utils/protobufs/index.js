@@ -4,15 +4,26 @@ const { get_all_files } = require("../index");
 const protobuf = require('protobufjs');
 const util = require("util");
 
-const PROTO_PREFIX = "ProtodecMessages";
+const updateProto = false;
+let __extraExports = {};
+try {
+    delete require.cache[require.resolve("./private")];
+}catch(e) {}
+try {
+    __extraExports = require("./private");
+}catch(e) {}
+
+const PROTO_PREFIX = "TeraSettings";
 let root = null;
-{
-    get_all_files(path.join(__dirname, "proto"))
+
+function loadRoot() {
+    return get_all_files(path.join(__dirname, "proto"))
     .then(files=> {
         root = protobuf.loadSync(files);
     }).catch(e=> console.error(e));
     //root = protobuf.loadSync(__dirname + "/proto/Settings.proto")
 }
+loadRoot();
 
 
 function fixCommonField(proto, {name, type}, unpack, overwriteValue) {
@@ -63,7 +74,7 @@ function getProto(proto) {
     return root.lookupType(`${PROTO_PREFIX}.${proto}`);
 }
 
-function populateSettingsWithPayload(settings) {
+function populateSettingsWithPayload(settings, rawData=false) {
     for(const setting of settings.data) {
 
         setting.name = fixCommonField(setting, {name: "name", type: "string"}, true);
@@ -74,6 +85,8 @@ function populateSettingsWithPayload(settings) {
         if(setting.data.length !== setting.length) {
             console.warn(`convertProto warning: Expected size: ${setting.length}, got size: ${setting.data.length}. Zipped: ${setting.compressed}`);
         }
+
+        if(rawData) continue;
 
         try {
             const proto = getProto(setting.name);
@@ -88,7 +101,19 @@ function populateSettingsWithPayload(settings) {
     return settings;
 }
 
-function parseSettings(payload) {
+function parseRawSettings(payload) {
+    const proto = getProto(`Settings`);
+    const settings = proto.decode(payload);
+    populateSettingsWithPayload(settings, true);
+    return settings;
+}
+
+async function parseSettings(payload) {
+    if(updateProto) {
+        await __extraExports.writeBlobs(payload);
+        await __extraExports.createProtos();
+        await loadRoot();
+    }
     const proto = getProto(`Settings`);
     const settings = proto.decode(payload);
     populateSettingsWithPayload(settings)
@@ -135,13 +160,9 @@ function toString(proto) {
     return util.inspect(proto, false, null, false);
 }
 
-let __extraExports = {};
-try {
-    __extraExports = require("./private");
-}catch(e) {}
-
 module.exports = {
     parseSettings,
+    parseRawSettings,
     packSettings,
     toString,
     ...__extraExports
