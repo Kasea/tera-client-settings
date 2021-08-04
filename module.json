@@ -1,6 +1,6 @@
 {
-    "servers": ["https://raw.githubusercontent.com/Kaseaa/tera-client-settings/master/"],
-    "supportUrl": "https://github.com/Kaseaa/tera-client-settings/issues",
+    "servers": ["https://raw.githubusercontent.com/Kasea/tera-client-settings/master/"],
+    "supportUrl": "https://github.com/Kasea/tera-client-settings/issues",
     "name": "client-settings",
     "disableAutoUpdate": false,
     "options": {
