@@ -1,5 +1,5 @@
 createManifest.py
 *node_modules
 utils/protobufs/package-lock.json
-utils/protobufs/protod*
-utils/protobufs/private.js
+utils/protobufs/blobs/*
+utils/protobufs/new_proto/*

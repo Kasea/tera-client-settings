@@ -5,6 +5,7 @@ message S1UI_GFxManager_1 {
 	optional int64 fld2 = 2;
 	optional float x = 3;
 	optional float y = 4;
+	repeated float fld10 = 10;
 }
 
 message S1UI_GFxManager_3 {
@@ -19,6 +20,9 @@ message S1UI_GFxManager {
 	optional int64 fld4 = 4;
 }
 
+// this belongs to S1UI_GFxManager_3.name (it's actually a string, not a repeat of floats)
 message S1UI_GFxManager_2 {
+	optional S1UI_GFxManager_1 fld1 = 1;
+	optional string fld2 = 2;
 	repeated float fld10 = 10;
 }
